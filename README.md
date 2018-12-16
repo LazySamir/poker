@@ -6,7 +6,6 @@ A very simple version of Poker built with Sinatra.
 As a user,
 So I can relax in my spare time,
 I want to play a simple game of Poker,
-- this is done when the user is shown the shuffled cards that they drew
 
 As a user,
 So I can customise my experience,
