@@ -38,10 +38,6 @@ class Game
     @hand_scores
   end
 
-  def show_hands
-    @all_hands
-  end
-
 private
 
   def create_empty_hands
