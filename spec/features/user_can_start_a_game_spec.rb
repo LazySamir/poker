@@ -1,5 +1,5 @@
-feature 'user can play poker' do
-  scenario 'user can play poker' do
+feature 'user can start a game' do
+  scenario 'user can select card and player numbers' do
     visit('/')
     click_button 'Play'
     fill_in :players, with: 2
