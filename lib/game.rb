@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :hand_scores, :all_hands
+  attr_reader :hand_scores, :all_hands, :deck
   # will need to instantiate with a player later
   # will instantiate with deck instance, now: hardcode
   CARD_SCORES = {
@@ -32,6 +32,7 @@ class Game
         # add a random card from the deck to first element
         hand << pick_random_card
         # NEED TO REMOVE CARD FROM DECK
+        @deck.delete(hand.last)
       end
     end
   end
@@ -44,6 +45,7 @@ class Game
   end
 
   def declare_winner
+    # returns number of player who wins
     return @hand_scores.each_with_index.max[1] + 1
   end
 

@@ -5,20 +5,23 @@ describe Game do
     it 'adds cards to each hand' do
       srand(1)
       game.deal_cards
-      expect(game.all_hands).to eq([["QC", "5S", "KH", "9H"], ["10H", "QH", "6H", "3D"]])
+      expect(game.all_hands).to eq([["QC", "6S", "KH", "9H"], ["JH", "2D", "6H", "8D"]])
     end
-    # card is removed from deck
+    it 'removes a cards from the deck' do
+      game.deal_cards
+      expect(game.deck.length).to eq(44)
+    end
   end
   describe '#score_hands' do
     it 'adds the hand scores' do
       srand(1)
       game.deal_cards
       game.score_hands
-      expect(game.hand_scores).to eq([39,31])
+      expect(game.hand_scores).to eq([40, 27])
     end
   end
-  describe '#score_hands' do
-    it 'adds the hand scores' do
+  describe '#declare_winner' do
+    it 'returns winning player number' do
       srand(1)
       game.deal_cards
       game.score_hands
