@@ -17,4 +17,12 @@ describe Game do
       expect(game.hand_scores).to eq([39,31])
     end
   end
+  describe '#score_hands' do
+    it 'adds the hand scores' do
+      srand(1)
+      game.deal_cards
+      game.score_hands
+      expect(game.declare_winner).to eq(1)
+    end
+  end
 end
