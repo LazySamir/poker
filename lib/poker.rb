@@ -12,4 +12,22 @@ class Poker
     @no_players = no_players
     @handsize = handsize
   end
+
+  def deal_cards
+    # make array with number of elements equal to no_players(array of arrays)
+    all_hands = []
+    @handsize.times { all_hands.push([]) }
+    # array.each do
+    all_hands.each do |hand|
+      # repeat until array[element].length == handsize
+      until hand.length == @handsize do
+        # add a random card from the deck to first element
+        hand << @deck.sample
+        # remove that card from the deck
+        @deck - [hand[-1]]
+      end
+    end
+    puts "all-hands #{all_hands}"
+    puts "deck #{@deck}"
+  end
 end
