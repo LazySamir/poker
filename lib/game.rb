@@ -9,8 +9,8 @@ class Game
     # These will be populated with further arrays depending on the number of players.
   # An instance of Deck injected.
   def initialize(no_players, handsize, deck = Deck.new)
-    @no_players = no_players
-    @handsize = handsize
+    @no_players = no_players.to_i
+    @handsize = handsize.to_i
     @all_hands = []
     @hand_scores = []
     @deck = deck

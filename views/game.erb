@@ -1,0 +1,7 @@
+<% @game.all_hands.each_with_index do |hand, index| %>
+Player: <%= index +1 %> <br>
+Hand: <%= hand %> <br>
+Score: <%= @game.hand_scores[index] %> <br><br>
+<% end %>
+
+The winner is Player: <%= @game.declare_winner %>

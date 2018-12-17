@@ -3,6 +3,8 @@ require './lib/game.rb'
 require './lib/deck.rb'
 
 class Poker < Sinatra::Base
+  enable :sessions
+
   get '/' do
     erb(:index)
   end
@@ -12,11 +14,17 @@ class Poker < Sinatra::Base
   end
 
   post '/game' do
-    # set params
-    redirect(:game)
+    # create game with params
+    no_players = params[:players]
+    handsize = params[:cards]
+    session[:game] = Game.new(no_players, handsize)
+    redirect(:result)
   end
 
   get '/result' do
+    @game = session[:game]
+    @game.deal_cards
+    @game.score_hands
     # shows players, cards and who wins
     erb(:game)
   end

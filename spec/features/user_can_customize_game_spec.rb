@@ -1,5 +1,5 @@
-feature 'user can start a game' do
-  scenario 'user can select card and player numbers' do
+feature 'user can customize game' do
+  scenario 'user can enter players and handsize' do
     visit('/')
     click_button 'Play'
     fill_in :players, with: 2
