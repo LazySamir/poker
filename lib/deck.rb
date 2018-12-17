@@ -28,6 +28,10 @@ class Deck
     return random_card
   end
 
+  def get_card_value(card)
+    CARD_SCORES[card]
+  end
+
 private
   # A private method that removes a card from the deck to remove the chance of
   # a player getting the same card multiple times

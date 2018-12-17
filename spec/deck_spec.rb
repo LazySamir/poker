@@ -10,4 +10,10 @@ describe Deck do
       expect(deck.all_cards.length).to eq(51)
     end
   end
+
+  describe '#get_card_value' do
+    it 'returns a value' do
+      expect(deck.get_card_value('AH')).to eq(1)
+    end
+  end
 end

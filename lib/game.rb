@@ -61,7 +61,7 @@ private
   def score_hand(hand)
     score = 0
     hand.each do |card|
-      score += Deck::CARD_SCORES[card]
+      score += @deck.get_card_value(card)
     end
     @hand_scores << score
   end
