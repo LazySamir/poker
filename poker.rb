@@ -1,8 +1,10 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require './lib/game.rb'
 require './lib/deck.rb'
 
 class Poker < Sinatra::Base
+  register Sinatra::Flash
   enable :sessions
 
   get '/' do
@@ -14,18 +16,24 @@ class Poker < Sinatra::Base
   end
 
   post '/game' do
-    # create game with params
+    # Creates an instance of Game using params as arguments.
     no_players = params[:players]
     handsize = params[:cards]
+
     session[:game] = Game.new(no_players, handsize)
-    redirect(:result)
+
+    if session[:game].valid_params?
+      redirect(:result)
+    else
+      flash[:notice] = "Invalid combination of players and handsize"
+      redirect(:game)
+    end
   end
 
   get '/result' do
     @game = session[:game]
     @game.deal_cards
     @game.score_hands
-    # shows players, cards and who wins
     erb(:game)
   end
 

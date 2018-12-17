@@ -47,6 +47,12 @@ class Game
     return @hand_scores.each_with_index.max[1] + 1
   end
 
+  # Sets arguments as this will be used before an instnace of game is created
+  def valid_params?
+    # puts "handsize: #{@hand_size} no_players"
+    (@handsize % @no_players == 0) && (@no_players.between?(2, 52))
+  end
+
 private
 
   # Creates array with number of elements equal to no_players(array of arrays)
