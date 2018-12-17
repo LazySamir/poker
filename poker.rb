@@ -17,9 +17,10 @@ class Poker < Sinatra::Base
 
   post '/game' do
     # Creates an instance of Game using params as arguments.
+    # If params are a valid combination it redirects to /results
+    # Else it redirects to /game and sets a flash message
     no_players = params[:players]
     handsize = params[:cards]
-
     session[:game] = Game.new(no_players, handsize)
 
     if session[:game].valid_params?

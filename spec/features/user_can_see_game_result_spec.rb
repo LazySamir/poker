@@ -1,9 +1,6 @@
 feature 'user can see game result' do
   scenario 'user is shown players\' hands, scores and the winner ' do
-    visit('/')
-    click_button 'Play'
-    fill_in :players, with: 2
-    fill_in :cards, with: 4
+    enter_valid_details
     srand(1)
     click_button 'Play'
     expect(page).to have_content("The winner is Player: 1")

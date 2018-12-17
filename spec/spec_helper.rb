@@ -2,6 +2,7 @@ require 'simplecov'
 require 'simplecov-console'
 require 'capybara'
 require 'capybara/rspec'
+require 'web_helpers'
 
 require File.join(File.dirname(__FILE__), '..', 'poker.rb')
 
