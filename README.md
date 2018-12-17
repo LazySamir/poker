@@ -1,5 +1,5 @@
 # Poker
-A very simple version of Poker built with Sinatra.
+A very simple version of Poker built with Sinatra [hosted on heroku](https://simple-ruby-poker.herokuapp.com/)
 
 ### User Stories
 ```
