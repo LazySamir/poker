@@ -47,9 +47,9 @@ class Game
     return @hand_scores.each_with_index.max[1] + 1
   end
 
-  # Sets arguments as this will be used before an instnace of game is created
+  # Responsible for determining if there is a valid combination of valid_params
+  # Divisible by each other && more than 2 players
   def valid_params?
-    # puts "handsize: #{@hand_size} no_players"
     (@handsize % @no_players == 0) && (@no_players.between?(2, 52))
   end
 

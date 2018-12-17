@@ -24,4 +24,19 @@ describe Game do
       expect(game.declare_winner).to eq(1)
     end
   end
-end
+  describe '#valid_params?' do
+    let(:valid_game1) {Game.new(4, 8)}
+    let(:valid_game2) {Game.new(10, 20)}
+    let(:invalid_game1) {Game.new(1, 4)}
+    let(:invalid_game2) {Game.new(55, 4)}
+
+      it 'returns true when given a valid combination' do
+        expect(valid_game1.valid_params?).to eq(true)
+        expect(valid_game2.valid_params?).to eq(true)
+      end
+      it 'returns false when given an invalid combination' do
+        expect(invalid_game1.valid_params?).to eq(false)
+        expect(invalid_game2.valid_params?).to eq(false)
+      end
+    end
+  end
