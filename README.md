@@ -19,13 +19,34 @@ As a user,
 So I still don't have to work it out for myself,
 I want the game to declare a winner
 ```
-### Approach
+### How to use
+#### Download the app
+```
+$ git clone git@github.com:LazySamir/poker.git
+$ cd poker
+$ bundle
+```
+#### Start the server
+```
+$ cd poker
+$ rackup
+```
 
+#### Use app
+```
+Visit localhost:9292
+Click 'play'
+Enter number of players and hand size
+Click 'play'
+See player hands, score and who wins.
+```
+
+### Initial Approach
 Initially I thought of creating this app via Rails but soon realised this would be overkill given the requirements. Sinatra is lightweight and appropriate for simple apps like this one.
 
-Although the instructions stated that a UI was not required for the basic brief, I planned to complete the 'gold' brief so decided to start with a html UI from the start.
+Although the instructions stated that a UI was not required for the basic brief, I planned to complete the 'gold' brief so decided to start with a html UI.
 
-##### Domain Model
+##### Initial Domain Model
 Before starting I mapped out a brief domain model:
 ```
 Poker
@@ -48,7 +69,7 @@ Deck Class is responsible for the deck of cards. It knows the contents of the de
 
 Player Class is responsible for the cards dealt to the player. It knows the cards that it holds and can work out the value of those cards. (I am not completely sure yet if deciding the value should be the role of Deck rather than Player).
 
-##### Database Model
+##### Initial Database Model
 I figured that for the 'gold' requirements (i.e. keeping track of games played and high scores) tables would be required, thus I modelled these too.
 
 ![Imgur](https://i.imgur.com/sLJ3zKK.jpg)
