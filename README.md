@@ -99,3 +99,6 @@ Because each card in the deck is held as a 2 letter string it is possible to loo
 
 ##### Allow user log in + track high scores
 It's possible to manage these without a database, but tabes would allow for easier and more secure login authentication.
+
+##### Improve UI design
+This was not a priority as it was not part of the requirements but I would like to add styling and better present the results route. Currently cards in each players hands are represented by an abbreviation in an array. e.g. ['AS', '4D', '2C', 'QD']
