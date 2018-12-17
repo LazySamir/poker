@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/game.rb'
+require './lib/deck.rb'
 
 class Poker < Sinatra::Base
   get '/' do

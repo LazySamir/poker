@@ -7,10 +7,6 @@ describe Game do
       game.deal_cards
       expect(game.all_hands).to eq([["QC", "6S", "KH", "9H"], ["JH", "2D", "6H", "8D"]])
     end
-    it 'removes a cards from the deck' do
-      game.deal_cards
-      expect(game.deck.length).to eq(44)
-    end
   end
   describe '#score_hands' do
     it 'adds the hand scores' do
