@@ -1,10 +1,11 @@
 <center><%= flash[:notice] %></center>
-<h4>Please enter the number of players and hand size</h4>
+<h3>Please enter the number of players and hand size</h3>
+<h5>Please ensure these numbers are divisble by each other</h5>
 <form action="/game" method="post">
-  Number of players:<br>
+  Number of players: (2-52)<br>
   <input type="number" name="players">
   <br>
-  Hand size:<br>
+  Hand size: (2-52)<br>
   <input type="number" name="cards">
   <br><br>
   <input type="submit" value="Play">
